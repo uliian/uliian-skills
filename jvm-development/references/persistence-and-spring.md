@@ -46,6 +46,10 @@ valid exceptions; document the reason and performance implications.
 
 - Keep SQL, ORM query construction, mapper details, and persistence models in the repository's
   persistence or infrastructure layer. Do not build queries in controllers or domain objects.
+- When using MyBatis-Plus with a logical-delete column, annotate the mapped entity field with
+  `@TableLogic` and rely on MyBatis-Plus logical-delete behavior. Delete through the applicable
+  `delete*` API instead of manually updating the flag, and do not add redundant logical-delete
+  predicates to ordinary queries; MyBatis-Plus supplies them automatically.
 - Use parameterized SQL and transactions for related writes. Avoid remote calls inside a database
   transaction unless the atomicity and latency tradeoff is intentional.
 - Follow the existing database dialect, ID precision, enum, JSON, and date/time conventions. Update
