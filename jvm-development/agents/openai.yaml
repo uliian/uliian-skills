@@ -1,0 +1,4 @@
+interface:
+  display_name: "Java & Kotlin Development"
+  short_description: "Java and Kotlin engineering defaults"
+  default_prompt: "Use $jvm-development to implement or review this Java or Kotlin change."
