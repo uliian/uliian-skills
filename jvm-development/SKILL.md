@@ -33,6 +33,16 @@ invariants below unless the user explicitly overrides them for the current task.
 - Use a domain-specific name, or a precise alternative such as `entity`, `row`, `item`,
   `entry`, `result`, `payload`, or `storedValue`.
 
+### Avoid Unrequested Defensive Validation
+
+- Unless the user explicitly requests it, do not add defensive programming or parameter-validity
+  checks to business-logic code. Assume callers satisfy the established contract instead of adding
+  proactive null, blank, range, format, enum, or similar guards and fallback branches.
+- Parameter validation is appropriate at client-input boundaries such as controllers. Prefer
+  non-invasive, declarative mechanisms such as Bean Validation annotations and `@Valid` over
+  manual validation branches.
+- Do not remove existing validation unless the requested change requires it.
+
 ## Workflow
 
 1. Read the applicable project and directory `AGENTS.md` files plus build manifests and CI
