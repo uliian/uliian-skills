@@ -33,6 +33,11 @@ invariants below unless the user explicitly overrides them for the current task.
 - Use a domain-specific name, or a precise alternative such as `entity`, `row`, `item`,
   `entry`, `result`, `payload`, or `storedValue`.
 
+### Extract Repeated String Literals
+
+- When the same string literal appears two or more times in one file, extract it into a named
+  constant and reference that constant at every occurrence.
+
 ### Avoid Unrequested Defensive Validation
 
 - Unless the user explicitly requests it, do not add defensive programming or parameter-validity
